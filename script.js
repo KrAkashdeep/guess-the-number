@@ -1,3 +1,5 @@
+// const { green } = require("@material-ui/core/colors");
+
 const number = Math.trunc(Math.random() * 20) + 1;
 // console.log(number);
 let score = 20;
@@ -11,6 +13,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").textContent = number;
     document.querySelector(".message").textContent = "correct guess 🤩";
     document.querySelector(".highscore").textContent = score;
+    document.querySelector("body").style.backgroundColor = "#60B347";
   } else if (guess > number) {
     if (score > 0) {
       document.querySelector(".message").textContent = "Too high!!";
@@ -26,6 +29,12 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".score").textContent = score;
     } else {
       document.querySelector(".message").textContent = "you lost the game";
+      document.querySelector("body").style.backgroundColor = "#940500";
     }
   }
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+  const number = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector(".message").textContent = "start guessing...";
 });
