@@ -1,6 +1,6 @@
 // const { green } = require("@material-ui/core/colors");
 
-const number = Math.trunc(Math.random() * 20) + 1;
+let number = Math.trunc(Math.random() * 20) + 1;
 // console.log(number);
 let score = 20;
 
@@ -35,6 +35,13 @@ document.querySelector(".check").addEventListener("click", function () {
 });
 
 document.querySelector(".again").addEventListener("click", function () {
-  const number = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector(".message").textContent = "start guessing...";
+  number = Math.trunc(Math.random() * 20) + 1;
+  // document.querySelector(".number").textContent = number;
+  let score = 20;
+
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".message").textContent = "Start guessing...";
+  document.querySelector(".score").textContent = score;
+  document.querySelector("body").style.backgroundColor = "#222";
+  // check(number);
 });
